@@ -1,0 +1,66 @@
+# unittest - ibrary to make testing easier
+import unittest
+import math
+
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(math.sqrt(n))):
+        if n % i == 0:
+            return False
+    return True
+
+
+class Tests(unittest.TestCase):
+
+    def test_1(self):
+        "Check that 1 is not a prime"
+        self.assertFalse(is_prime(1))
+
+    def test_2(self):
+        "Check that 2 is prime"
+        self.assertTrue(is_prime(2))
+
+    def test_8(self):
+        "Check that 8 is not a prime"
+        self.assertFalse(is_prime(8))
+
+    def test_11(self):
+        "Check that 11 is prime"
+        self.assertTrue(is_prime(11))
+
+    def test_25(self):
+        "Check that 25 is not a prime"
+        self.assertFalse(is_prime(25))
+
+    def test_85(self):
+        "Check that 85 is not a prime"
+        self.assertFalse(is_prime(85))
+
+    def test_95(self):
+        "Check that 95 is not a prime"
+        self.assertFalse(is_prime(95))
+
+    def test_125(self):
+        "Check that 125 is not a prime"
+        self.assertFalse(is_prime(125))
+
+    def test_225(self):
+        "Check that 225 is not a prime"
+        self.assertFalse(is_prime(225))
+
+    def test_325(self):
+        "Check that 325 is not a prime"
+        self.assertFalse(is_prime(325))
+
+    def test_425(self):
+        "Check that 425 is not a prime"
+        self.assertFalse(is_prime(425))
+
+    def test_525(self):
+        "Check that 525 is not a prime"
+        self.assertFalse(is_prime(525))
+
+
+if __name__ == "__main__":
+    unittest.main()
